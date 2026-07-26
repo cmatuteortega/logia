@@ -1,8 +1,6 @@
 import CtaButton from "./CtaButton";
 import Reveal from "./Reveal";
 
-const trustItems = ["Sin compromiso", "15 minutos", "Sin tarjeta"];
-
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-white px-6 pt-20 pb-20 sm:pt-28 sm:pb-28">
@@ -19,24 +17,25 @@ export default function Hero() {
         <Reveal>
           <span className="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-3.5 py-1.5 text-xs font-semibold text-amber-800">
             <span className="h-1.5 w-1.5 rounded-full bg-amber-600" />
-            Vigilancia de stock para pymes
+            Fiabilidad de stock para alimentación
           </span>
         </Reveal>
 
         <Reveal delay={80}>
           <h1 className="mt-6 text-4xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-6xl">
-            Tu almacén te avisa antes de que{" "}
+            Tu stock dice una cosa. La estantería dice otra. Esa diferencia{" "}
             <span className="bg-gradient-to-r from-amber-600 to-amber-500 bg-clip-text text-transparent">
-              la fricción te cueste dinero
+              te cuesta dinero
             </span>
+            .
           </h1>
         </Reveal>
 
         <Reveal delay={140}>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl">
-            Logia detecta discrepancias de stock, roturas antes de que pasen y
-            caducidades que se te escapan — conectado a lo que ya usas, o
-            directamente desde tus albaranes en papel.
+            Logia controla qué entra, en qué condiciones, dónde está y qué
+            falta. Caducidades, mermas, faltantes y pedidos que no puedes
+            servir — avisados antes de que te cuesten dinero.
           </p>
         </Reveal>
 
@@ -67,30 +66,23 @@ export default function Hero() {
         </Reveal>
 
         <Reveal delay={260}>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-            {trustItems.map((item) => (
-              <span
-                key={item}
-                className="inline-flex items-center gap-1.5 text-sm text-slate-500"
-              >
-                <svg
-                  aria-hidden="true"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  className="h-4 w-4 text-amber-600"
-                >
-                  <path
-                    d="M3 8.5 6.2 11.5 13 4.5"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                {item}
-              </span>
-            ))}
-          </div>
+          <p className="mt-6 inline-flex items-center gap-1.5 text-sm text-slate-500">
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 16 16"
+              fill="none"
+              className="h-4 w-4 shrink-0 text-amber-600"
+            >
+              <path
+                d="M3 8.5 6.2 11.5 13 4.5"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            Un mes de diagnóstico gratis. Sin instalar nada.
+          </p>
         </Reveal>
 
         <Reveal delay={320} className="mt-16 w-full max-w-lg">
@@ -108,18 +100,18 @@ export default function Hero() {
               {[
                 {
                   tone: "bg-red-500",
-                  title: "Riesgo de rotura — Aceite oliva 1L",
-                  meta: "Quedan 3 días de cobertura",
+                  title: "Jamón ibérico — caduca en 2 días",
+                  meta: "180 € en riesgo",
                 },
                 {
                   tone: "bg-amber-500",
-                  title: "Discrepancia detectada — Almacén 2",
-                  meta: "Sistema dice 40, contadas 31",
+                  title: "Cámara 2 fuera de rango — 3h",
+                  meta: "420 € de producto expuesto",
                 },
                 {
                   tone: "bg-slate-300",
-                  title: "Caducidad próxima — Lote 0472",
-                  meta: "Vence en 6 días",
+                  title: "Leche entera 1L — se agota mañana",
+                  meta: "El próximo pedido no llega hasta el jueves",
                 },
               ].map((row) => (
                 <li

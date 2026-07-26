@@ -2,21 +2,32 @@ import Reveal from "./Reveal";
 
 const faqs = [
   {
-    question: "¿Necesito cambiar mi sistema actual?",
-    answer: "No, Logia se conecta a lo que ya usas o funciona en paralelo.",
+    question: "¿Tengo que cambiar mi TPV?",
+    answer: "No. Logia funciona en paralelo a lo que ya usas.",
   },
   {
-    question: "No llevo nada digitalizado, ¿puedo usarlo igual?",
-    answer: "Sí, empezamos con fotos de tus albaranes.",
+    question: "Lo llevo todo en papel, ¿me sirve?",
+    answer: "Sí. Empezamos con fotos de tus albaranes.",
   },
   {
-    question: "¿Cuánto tarda en dar las primeras alertas?",
+    question: "¿Cuánto tarda mi equipo en aprender?",
+    answer: "Fotografiar un albarán son 10 segundos. No hay formación.",
+  },
+  {
+    question:
+      "¿Esto es para controlar mermas o para no quedarme sin stock?",
     answer:
-      "Entre 1 y 2 semanas desde que empezamos a recibir tus datos.",
+      "Para las dos cosas. Es el mismo problema visto por sus dos caras: un stock que no es fiable.",
   },
   {
-    question: "¿Y si tengo varios almacenes?",
-    answer: "Lo hablamos en la llamada, nos adaptamos a tu caso.",
+    question: "¿Y si tengo varias tiendas?",
+    answer:
+      "Mejor: es donde más se nota, porque lo que sobra en una suele faltar en otra. Hay descuento por volumen.",
+  },
+  {
+    question: "¿Cuándo empiezo a recibir avisos?",
+    answer:
+      "Las primeras alertas, en 1-2 semanas. El informe completo, al mes.",
   },
 ];
 

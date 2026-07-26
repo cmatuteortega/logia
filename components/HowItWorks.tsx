@@ -3,15 +3,18 @@ import Reveal from "./Reveal";
 const steps = [
   {
     number: "1",
-    text: "Nos cuentas cómo llevas el stock hoy — 15 minutos, sin compromiso.",
+    title: "Fotografías el albarán",
+    text: "Cuando llega el pedido. Nosotros sacamos productos, cantidades, lotes y caducidades.",
   },
   {
     number: "2",
-    text: "Conectamos o digitalizamos tus datos — CSV, tu software, o fotos de albaranes.",
+    title: "Registras salidas y mermas",
+    text: "En dos toques, escaneando. Con el motivo.",
   },
   {
     number: "3",
-    text: "Recibes avisos cuando algo no cuadra — por email o WhatsApp, en lenguaje claro, sin dashboards que interpretar.",
+    title: "Recibes los avisos",
+    text: "En el móvil, y un informe mensual que te dice cuánto has perdido, cuánto has dejado de vender y dónde.",
   },
 ];
 
@@ -40,6 +43,9 @@ export default function HowItWorks() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-amber-500 to-amber-700 text-lg font-bold text-white shadow-sm shadow-amber-600/30">
                     {step.number}
                   </div>
+                  <h3 className="text-base font-semibold text-slate-900">
+                    {step.title}
+                  </h3>
                   <p className="text-base leading-relaxed text-slate-700">
                     {step.text}
                   </p>
@@ -48,6 +54,13 @@ export default function HowItWorks() {
             ))}
           </div>
         </div>
+
+        <Reveal delay={300}>
+          <p className="mt-10 text-center text-sm text-slate-500">
+            Sin cambiar de TPV. Sin instalar equipos. Funciona aunque hoy lo
+            lleves todo en papel.
+          </p>
+        </Reveal>
       </div>
     </section>
   );
