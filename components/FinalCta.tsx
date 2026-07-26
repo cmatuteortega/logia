@@ -1,15 +1,26 @@
 import LeadForm from "./LeadForm";
+import Reveal from "./Reveal";
 
 export default function FinalCta() {
   return (
-    <section id="formulario" className="bg-slate-50 px-6 py-16 sm:py-20">
+    <section
+      id="formulario"
+      className="bg-gradient-to-b from-slate-50 to-white px-6 py-20 sm:py-28"
+    >
       <div className="mx-auto max-w-md">
-        <h2 className="text-center text-2xl font-bold text-slate-900 sm:text-3xl">
-          ¿Hablamos 15 minutos sobre cómo llevas tu stock?
-        </h2>
-        <div className="mt-8">
-          <LeadForm />
-        </div>
+        <Reveal className="text-center">
+          <span className="text-xs font-semibold uppercase tracking-wide text-amber-600">
+            Empecemos
+          </span>
+          <h2 className="mt-3 text-2xl font-bold text-slate-900 sm:text-3xl">
+            ¿Hablamos 15 minutos sobre cómo llevas tu stock?
+          </h2>
+        </Reveal>
+        <Reveal delay={100} className="mt-8">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-900/5 sm:p-8">
+            <LeadForm />
+          </div>
+        </Reveal>
       </div>
     </section>
   );

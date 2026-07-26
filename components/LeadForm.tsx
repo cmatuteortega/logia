@@ -49,13 +49,32 @@ export default function LeadForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-md border border-amber-200 bg-amber-50 p-6 text-center">
+      <div className="flex flex-col items-center gap-3 rounded-xl border border-amber-200 bg-amber-50 p-6 text-center">
+        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-amber-600 text-white">
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 20 20"
+            fill="none"
+            className="h-5 w-5"
+          >
+            <path
+              d="M4 10.5 8 14l8-8.5"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
         <p className="text-base font-semibold text-slate-900 sm:text-lg">
           Gracias, te contactamos en menos de 24h para agendar la llamada.
         </p>
       </div>
     );
   }
+
+  const inputClass =
+    "rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-base text-slate-900 outline-none transition-shadow focus:border-amber-600 focus:bg-white focus:ring-4 focus:ring-amber-600/15";
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -69,7 +88,7 @@ export default function LeadForm() {
           type="text"
           required
           autoComplete="name"
-          className="rounded-md border border-slate-300 px-4 py-3 text-base text-slate-900 outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-600/30"
+          className={inputClass}
         />
       </div>
 
@@ -83,7 +102,7 @@ export default function LeadForm() {
           type="email"
           required
           autoComplete="email"
-          className="rounded-md border border-slate-300 px-4 py-3 text-base text-slate-900 outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-600/30"
+          className={inputClass}
         />
       </div>
 
@@ -96,7 +115,7 @@ export default function LeadForm() {
           name="phone"
           type="tel"
           autoComplete="tel"
-          className="rounded-md border border-slate-300 px-4 py-3 text-base text-slate-900 outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-600/30"
+          className={inputClass}
         />
       </div>
 
@@ -112,7 +131,7 @@ export default function LeadForm() {
           name="stockMethod"
           required
           defaultValue=""
-          className="rounded-md border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-600/30"
+          className={inputClass}
         >
           <option value="" disabled>
             Selecciona una opción
@@ -130,9 +149,36 @@ export default function LeadForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="mt-2 inline-flex items-center justify-center rounded-md bg-amber-600 px-6 py-4 text-base font-semibold text-white transition-colors hover:bg-amber-700 active:bg-amber-800 disabled:cursor-not-allowed disabled:opacity-70"
+        className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-amber-600 px-6 py-4 text-base font-semibold text-white shadow-lg shadow-amber-600/25 transition-all duration-200 hover:-translate-y-0.5 hover:bg-amber-700 hover:shadow-xl hover:shadow-amber-600/30 active:translate-y-0 active:bg-amber-800 disabled:cursor-not-allowed disabled:translate-y-0 disabled:opacity-70"
       >
-        {status === "loading" ? "Enviando..." : "Enviar"}
+        {status === "loading" ? (
+          <>
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 20 20"
+              fill="none"
+              className="h-4 w-4 animate-spin"
+            >
+              <circle
+                cx="10"
+                cy="10"
+                r="7.5"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                opacity="0.25"
+              />
+              <path
+                d="M17.5 10a7.5 7.5 0 0 0-7.5-7.5"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+              />
+            </svg>
+            Enviando...
+          </>
+        ) : (
+          "Enviar"
+        )}
       </button>
     </form>
   );

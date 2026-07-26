@@ -9,7 +9,7 @@ import FinalCta from "@/components/FinalCta";
 
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col">
+    <main id="top" className="flex flex-1 flex-col">
       <Hero />
       <ProblemAgitation />
       <ValueProps />
@@ -18,9 +18,6 @@ export default function Home() {
       <Pricing />
       <Faq />
       <FinalCta />
-      <footer className="border-t border-slate-200 px-6 py-8 text-center text-sm text-slate-500">
-        Logia — {new Date().getFullYear()}
-      </footer>
     </main>
   );
 }
