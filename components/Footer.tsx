@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">
         <Logo mark="light" />
         <p className="text-sm text-slate-400">
-          Vigilancia de inventario para pymes con almacén.
+          Fiabilidad de stock para comercio de alimentación.
         </p>
         <p className="text-sm text-slate-500">
           © {new Date().getFullYear()} Logia

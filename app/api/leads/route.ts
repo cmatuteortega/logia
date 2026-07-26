@@ -1,7 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSupabaseAdmin } from "@/lib/supabase";
 
-const STOCK_METHODS = ["software_tpv", "excel_csv", "papel"] as const;
+const BUSINESS_TYPES = [
+  "supermercado",
+  "especializada",
+  "obrador",
+  "distribuidor",
+] as const;
+
+const STORE_COUNTS = ["1", "2-3", "4-10", "10+"] as const;
 
 export async function POST(request: NextRequest) {
   const body = await request.json().catch(() => null);
@@ -13,19 +20,33 @@ export async function POST(request: NextRequest) {
   const name = typeof body.name === "string" ? body.name.trim() : "";
   const email = typeof body.email === "string" ? body.email.trim() : "";
   const phone = typeof body.phone === "string" ? body.phone.trim() : "";
-  const stockMethod =
-    typeof body.stockMethod === "string" ? body.stockMethod : "";
+  const businessType =
+    typeof body.businessType === "string" ? body.businessType : "";
+  const storeCount =
+    typeof body.storeCount === "string" ? body.storeCount : "";
 
-  if (!name || !email || !stockMethod) {
+  if (!name || !email || !businessType || !storeCount) {
     return NextResponse.json(
-      { error: "Nombre, email y método de stock son obligatorios." },
+      {
+        error:
+          "Nombre, email, tipo de negocio y número de tiendas son obligatorios.",
+      },
       { status: 400 },
     );
   }
 
-  if (!STOCK_METHODS.includes(stockMethod as (typeof STOCK_METHODS)[number])) {
+  if (
+    !BUSINESS_TYPES.includes(businessType as (typeof BUSINESS_TYPES)[number])
+  ) {
     return NextResponse.json(
-      { error: "Método de stock no válido." },
+      { error: "Tipo de negocio no válido." },
+      { status: 400 },
+    );
+  }
+
+  if (!STORE_COUNTS.includes(storeCount as (typeof STORE_COUNTS)[number])) {
+    return NextResponse.json(
+      { error: "Número de tiendas no válido." },
       { status: 400 },
     );
   }
@@ -51,7 +72,8 @@ export async function POST(request: NextRequest) {
     name,
     email,
     phone: phone || null,
-    stock_method: stockMethod,
+    business_type: businessType,
+    store_count: storeCount,
   });
 
   if (error) {

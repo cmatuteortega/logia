@@ -13,7 +13,7 @@ export default function FinalCta() {
             Empecemos
           </span>
           <h2 className="mt-3 text-2xl font-bold text-slate-900 sm:text-3xl">
-            ¿Hablamos 15 minutos sobre cómo llevas tu stock?
+            ¿Cuánto crees que pierdes al mes? Vamos a averiguarlo.
           </h2>
         </Reveal>
         <Reveal delay={100} className="mt-8">

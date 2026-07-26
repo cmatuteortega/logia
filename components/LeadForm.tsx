@@ -20,7 +20,8 @@ export default function LeadForm() {
       name: formData.get("name"),
       email: formData.get("email"),
       phone: formData.get("phone"),
-      stockMethod: formData.get("stockMethod"),
+      businessType: formData.get("businessType"),
+      storeCount: formData.get("storeCount"),
     };
 
     try {
@@ -67,7 +68,8 @@ export default function LeadForm() {
           </svg>
         </span>
         <p className="text-base font-semibold text-slate-900 sm:text-lg">
-          Gracias, te contactamos en menos de 24h para agendar la llamada.
+          Gracias. Te contactamos en menos de 24h para arrancar tu mes de
+          diagnóstico.
         </p>
       </div>
     );
@@ -121,14 +123,14 @@ export default function LeadForm() {
 
       <div className="flex flex-col gap-1.5">
         <label
-          htmlFor="stockMethod"
+          htmlFor="businessType"
           className="text-sm font-medium text-slate-700"
         >
-          ¿Cómo llevas hoy tu stock?
+          ¿Qué tipo de negocio tienes?
         </label>
         <select
-          id="stockMethod"
-          name="stockMethod"
+          id="businessType"
+          name="businessType"
           required
           defaultValue=""
           className={inputClass}
@@ -136,9 +138,41 @@ export default function LeadForm() {
           <option value="" disabled>
             Selecciona una opción
           </option>
-          <option value="software_tpv">Software/TPV</option>
-          <option value="excel_csv">Excel o CSV</option>
-          <option value="papel">Papel / nada digital</option>
+          <option value="supermercado">
+            Supermercado / tienda de alimentación
+          </option>
+          <option value="especializada">
+            Tienda especializada de fresco (carnicería, pescadería,
+            quesería...)
+          </option>
+          <option value="obrador">
+            Obrador o productor (panadería, pastelería, conservas...)
+          </option>
+          <option value="distribuidor">Distribuidor de alimentación</option>
+        </select>
+      </div>
+
+      <div className="flex flex-col gap-1.5">
+        <label
+          htmlFor="storeCount"
+          className="text-sm font-medium text-slate-700"
+        >
+          ¿Cuántas tiendas?
+        </label>
+        <select
+          id="storeCount"
+          name="storeCount"
+          required
+          defaultValue=""
+          className={inputClass}
+        >
+          <option value="" disabled>
+            Selecciona una opción
+          </option>
+          <option value="1">1 tienda</option>
+          <option value="2-3">2-3 tiendas</option>
+          <option value="4-10">4-10 tiendas</option>
+          <option value="10+">Más de 10 tiendas</option>
         </select>
       </div>
 
@@ -177,7 +211,7 @@ export default function LeadForm() {
             Enviando...
           </>
         ) : (
-          "Enviar"
+          "Quiero mi diagnóstico"
         )}
       </button>
     </form>

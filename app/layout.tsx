@@ -3,10 +3,9 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
-const title =
-  "Logia — Tu almacén te avisa antes de que la fricción te cueste dinero";
+const title = "Logia — Tu stock dice una cosa. La estantería dice otra.";
 const description =
-  "Logia detecta discrepancias de stock, roturas antes de que pasen y caducidades que se te escapan — conectado a lo que ya usas, o directamente desde tus albaranes en papel.";
+  "Logia controla qué entra, en qué condiciones, dónde está y qué falta en tu tienda de alimentación. Caducidades, mermas, faltantes y pedidos que no puedes servir — avisados antes de que te cuesten dinero.";
 
 export const metadata: Metadata = {
   title,
