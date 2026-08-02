@@ -39,7 +39,7 @@ let loading: Promise<void> | null = null;
 export function loadDesignSystem(): Promise<void> {
   if (loading) return loading;
   const w = window as unknown as Record<string, unknown>;
-  w.React = React;
+  w.React = { ...React };
   w.ReactDOM = { ...ReactDOM, ...ReactDOMClient };
   loading = new Promise((resolve, reject) => {
     const el = document.createElement('script');
