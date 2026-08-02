@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#eae7e1" />
+    <title>ailelog · Recepción de albaranes</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/ds/styles.css" />
+    <style>
+      body {
+        margin: 0;
+        background: #eae7e1;
+        font-family: var(--font-sans);
+        -webkit-tap-highlight-color: transparent;
+      }
+      a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+      a:hover {
+        color: var(--chart-5);
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes up {
+        from {
+          transform: translateY(18px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      @keyframes scanline {
+        0% {
+          top: 10%;
+        }
+        100% {
+          top: 86%;
+        }
+      }
+      /* Scrolling flex columns: keep items at their natural height instead of
+         letting them compress to fit. */
+      .no-shrink > * {
+        flex-shrink: 0;
+      }
+      .tap {
+        transition: transform 0.12s ease, background 0.12s ease, color 0.12s ease;
+      }
+      .tap:active {
+        transform: scale(0.94);
+      }
+      .tap-card:active {
+        transform: scale(0.985);
+        background: var(--primary) !important;
+        color: var(--primary-foreground) !important;
+        border-color: var(--primary) !important;
+      }
+      .tap-soft:active {
+        transform: scale(0.985);
+      }
+      .tap-wide:active {
+        transform: scale(0.97);
+      }
+      .tap-ghost:active {
+        background: var(--muted);
+      }
+      .row-hover:hover {
+        background: var(--accent) !important;
+      }
+      .menu-row:hover {
+        background: var(--muted);
+      }
+      .menu-row-danger:hover {
+        background: oklch(0.577 0.245 27.325 / 0.08);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
